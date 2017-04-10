@@ -1,0 +1,11 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<title>Django Games</title>
+<link rel='shortcut icon' type='image/png' href='{% static "games/img/pieces/Chess_pdt60.png" %}'>
+<link rel='stylesheet' type='text/css' href='{% static "games/style.css" %}'>
+
+<div id='container'></div>
+{% render_bundle "reversi" %}

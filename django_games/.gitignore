@@ -1,0 +1,8 @@
+db.sqlite3
+*.swp
+*__pycache__*
+secret.txt
+node_modules
+assets/bundles
+webpack-stats.json
+.DS_Store

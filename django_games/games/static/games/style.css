@@ -1,0 +1,479 @@
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+}
+
+ol, ul {
+    padding-left: 30px;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.board-row {
+    display: flex;
+    justify-content: center;
+}
+
+.ttt-square, .reversi-square, .chess-square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+}
+
+
+.square:focus {
+    outline: none;
+}
+
+.kbd-navigation .square:focus {
+    background: #ddd;
+}
+
+/* end ttt style from react tutorial */
+
+.title, .subtitle {
+    text-align: center;
+}
+
+.your-id {
+    color: #7ce847;
+}
+
+.current-turn-indicator {
+    color: #7ce847;
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {  
+    50% { opacity: 0; }
+}
+
+.my-button {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 12px;
+    border: 2px solid #4CAF50;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.my-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.my-button:active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.new-game-button {
+    margin-top: 10px;
+}
+
+.game-area {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.board-area {
+    width: 312px;
+}
+
+.player-turn-status-area {
+    height: 38px;
+    display: flex;
+}
+
+.current-turn-area {
+    margin-left: auto;
+}
+
+.chat-area, .game-log-area {
+    width: 300px;
+    height: 400px;
+    border: 2px solid grey;
+    margin-top: 10px;
+    background: #f2e7da;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-area h3, .game-log-area h3 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid grey;
+    background: white;
+}
+
+.chat-messages-area {
+    margin-bottom: auto;
+    overflow-y: scroll;
+}
+
+.chat-input-area {
+    height: 60px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    border-radius: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: auto;
+    height: 30px;
+}
+
+.chat-input-area .my-button {
+    margin-right: 3px;
+    margin-top: auto;
+    height: 30px;
+    font: 12px "Century Gothic", Futura, sans-serif;
+    padding: 3px 6px;
+    border-radius: 6px;
+}
+
+.chat-msg-self, .chat-msg-other {
+    padding: 4px;
+    border-radius: 6px;
+    max-width: 80%;
+    margin-bottom: 7px;
+}
+
+.chat-msg-self {
+    margin-left: auto;
+    margin-right: 4px;
+    background: #e9ffd6;
+}
+
+.chat-msg-other {
+    margin-left: 4px;
+    margin-right: auto;
+    background: white;
+}
+
+.chat-msg-timestamp, .log-entry-timestamp {
+    font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #bab9b8;
+    text-align: right;
+}
+
+.game-log-area {
+    width: 300px;
+    height: 400px;
+}
+
+.game-log-area {
+    background: white;
+}
+
+.game-log-entries-area {
+    overflow-y: scroll;
+}
+
+.log-entry {
+    margin: 4px;
+    padding: 2px;
+    background: #ededed;
+    border-radius: 6px;
+}
+
+.log-entry-timestamp {
+    color: black;
+}
+
+.ttt-board, .reversi-board, .chess-board {
+    margin-top: 10px;
+}
+
+.ttt-square {
+    font-size: 90px;
+    line-height: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+.reversi-square {
+    display: flex;
+    background-color: #227a0e;
+    border: 1px solid black;
+}
+
+.reversi-img-box {
+    height: 75%;
+    width: 75%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.chess-square {
+    display: flex;
+    border: none;
+}
+
+.chess-square-dark {
+    background-color: #682105;
+}
+
+.chess-square-light {
+    background-color: #E7CF7A;
+}
+
+.selected {
+    background: #26ff00;
+}
+
+.possible-move-square {
+    height: 25%;
+    width: 25%;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #26ff00;
+}
+
+.chess-img-box {
+    display: flex;
+    height: 75%;
+    width: 75%;
+    margin: auto;
+    background-position: center;
+    background-size: contain;
+}
+
+.white-bishop {
+    background-image: url('img/pieces/Chess_blt60.png');
+}
+
+.white-king {
+    background-image: url('img/pieces/Chess_klt60.png');
+}
+
+.white-knight {
+    background-image: url('img/pieces/Chess_nlt60.png');
+}
+
+.white-pawn {
+    background-image: url('img/pieces/Chess_plt60.png');
+}
+
+.white-queen {
+    background-image: url('img/pieces/Chess_qlt60.png');
+}
+
+.white-rook {
+    background-image: url('img/pieces/Chess_rlt60.png');
+}
+
+.black-bishop {
+    background-image: url('img/pieces/Chess_bdt60.png');
+}
+
+.black-king {
+    background-image: url('img/pieces/Chess_kdt60.png');
+}
+
+.black-knight {
+    background-image: url('img/pieces/Chess_ndt60.png');
+}
+
+.black-pawn {
+    background-image: url('img/pieces/Chess_pdt60.png');
+}
+
+.black-queen {
+    background-image: url('img/pieces/Chess_qdt60.png');
+}
+
+.black-rook {
+    background-image: url('img/pieces/Chess_rdt60.png');
+}
+
+.white-tile {
+    background-color: white;
+}
+
+.black-tile {
+    background-color: black;
+}
+
+.reversi-square, .chess-square {
+    height: 39px;
+    width: 39px;
+}
+
+@media only screen and (max-width: 319px) {
+    .game-area {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    .board-area {
+        width: 336px;
+    }
+
+    .chat-area {
+        width: 340px;
+    }
+
+    .game-log-area {
+        width: 340px;
+    }
+
+    .ttt-square {
+      font-size: 103px;
+      line-height: 113px;
+      height: 113px;
+      width: 113px;
+    }
+
+    .reversi-square, .chess-square {
+        height: 42px;
+        width: 42px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .board-area {
+        width: 360px;
+    }
+
+    .chat-area {
+        width: 355px;
+    }
+
+    .game-log-area {
+        width: 355px;
+    }
+
+    .ttt-square {
+      font-size: 108px;
+      line-height: 118px;
+      height: 118px;
+      width: 118px;
+    }
+
+    .reversi-square, .chess-square {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+@media only screen and (min-width: 412px) {
+    .board-area {
+        width: 408px;
+    }
+
+    .chat-area {
+        width: 392px;
+    }
+
+    .game-log-area {
+        width: 392px;
+    }
+
+    .ttt-square {
+      font-size: 120px;
+      line-height: 130px;
+      height: 130px;
+      width: 130px;
+    }
+
+    .reversi-square, .chess-square {
+        height: 51px;
+        width: 51px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .chat-area {
+        width: 336px;
+        height: 392px;
+        margin-top: 46px;
+    }
+
+    .game-log-area {
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (min-width: 900px) {
+    .board-area {
+        width: 504px;
+    }
+
+    .chat-area {
+        width: 336px;
+        height: 524px;
+    }
+
+    .game-log-area {
+        width: 524px;
+        height: 524px;
+    }
+
+    .ttt-square {
+      font-size: 164px;
+      line-height: 174px;
+      height: 174px;
+      width: 174px;
+    }
+
+    .reversi-square, .chess-square {
+        height: 63px;
+        width: 63px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .board-area {
+        width: 528px;
+    }
+
+    .chat-area {
+        width: 336px;
+        height: 548px;
+    }
+
+    .game-log-area {
+        width: 336px;
+        height: 548px;
+        margin-top: 46px;
+        margin-right: 0px;
+    }
+
+    .ttt-square {
+      font-size: 172px;
+      line-height: 182px;
+      height: 182px;
+      width: 182px;
+    }
+
+    .reversi-square, .chess-square {
+        height: 66px;
+        width: 66px;
+    }
+}
